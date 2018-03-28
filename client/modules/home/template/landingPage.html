@@ -1,0 +1,152 @@
+
+<div class="container" >
+	<section>
+		<div >
+			<div class="row">
+				<div class="col-md-12 col-sm-9">
+					<div class="panel panel-default" style="border: 2px solid #07a6aa">
+						<div class="panel-heading"
+							 style="border: #07a6aa ;height: 39px; color: #fff; background-color: #07a6aa;font-weight: bold;text-align: center">
+							coin code tech
+						</div>
+						<div>
+							<div class="col col-md-12">
+								<div class="panel-body col col-md-2">
+									<h5>
+										<div class="form-group" style="text-align: center">
+											
+
+											<button style="border-radius: 5px;height: 30px;text-align: center"
+													ng-click="adduser()">ADD COIN
+											</button>
+										</div>
+									</h5>
+								</div>
+
+                              <div class="panel-body col col-md-3">
+										<input type="text" style="width: 100%" placeholder="enter the  name" ng-model="user.name" >
+								</div>
+
+								<div class="panel-body col col-md-3">
+										<input type="text" style="width: 100%" placeholder="enter the message" ng-model="user.message" >
+								</div>
+
+
+								<div class="panel-body col col-md-4">
+									<div class="panel-body col col-md-4"> select coin :
+									</div>
+									<div class="panel-body col col-md-8">
+										<select  ng-model="user.selectedName" ng-options="x for x in names" ng-change="checkName()">
+									</select>
+									</div>
+									
+								</div>
+
+
+								
+											
+							</div>
+							
+
+							<table class="table table-bordered table-condensed table-striped" style="margin-top:2%;">
+								<div>
+									<div>
+										<tr>
+											
+											<th style="background-color: #07a6aa;text-align: center;width:10%">NAME
+											</th>
+											<th style="background-color: #07a6aa;text-align: center;width:9%">currency
+											</th>
+											<th style="background-color: #07a6aa;text-align: center;width:9%">message
+											</th>
+											<th style="background-color: #07a6aa;text-align: center;width:9%">status
+											</th>
+											<th style="background-color: #07a6aa;text-align: center;width:9%">wallet_address
+											</th>
+											
+										</tr>
+									</div>
+
+									<tr style="background-color: aliceblue" ng-repeat = "user in allUser">
+										
+										<td style="text-align: center">{{user.Name}}</td>
+										<td style="text-align: center">{{user.wallet_info.currency_name}}</td>
+										<td style="text-align: center">{{user.msg}}</td>
+										<td style="text-align: center">{{user.status}}</td>
+										<td style="text-align: center">{{user.wallet_info.wallet_address}}</td>
+									</tr>
+								</div>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+			<div class="modal fade" id="EasyShare" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content" style="margin-left: -153px;width: 935px;height: 200px">
+						<div class="modal-header">
+
+							<div class="col col-md-12">
+								<div class="panel-body col col-md-3">
+									<button style="text-align: right"
+											data-dismiss="modal">Close
+									</button>
+								</div>
+								<div class="panel-body col col-md-6" style="text-align: center">
+									<h4 class="modal-title">Add Post Details</h4>
+								</div>
+								<div class="panel-body col col-md-3">
+									<!-- <button style="text-align: left" 
+											ng-click="addpost()" data-dismiss="modal">POST
+									</button> -->
+									<button style="border-radius: 5px;height: 30px;text-align: center"
+													data-toggle="modal" data-target="#EasyShare" ng-click="addpost()">ADD POST
+											</button>
+								</div>
+							</div>
+						</div>   
+						
+						<div class="modal-body">
+							
+							
+							<div class="col col-md-12">
+								<div class="panel-body col col-md-6">
+									<h5>
+										
+										<input type="text" style="width: 350px" placeholder="enter the post name" ng-model="post.name" >
+									</h5>
+								</div>
+								<div class="panel-body col col-md-6">
+									<h5>
+										
+										<input type="text" style="width: 350px" placeholder="enter post type" ng-model="post.type" >
+									</h5>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+	</section>
+
+
+ <!--  -->
+</div>
+
+
