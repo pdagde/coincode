@@ -11,7 +11,10 @@ angular.module('calenderCodeCtrl',[])
        $scope.allUser = [];
       $scope.adduser = function(){
         $http.post('/auth/addUser',$scope.user).then(function (response) {
-                $scope.allUser.push(response.data)
+                console.log("xasasaaas",JSON.stringify(response));
+                // $scope.allUser.push(response.data)
+                $scope.allUser = response.data;
+                 $scope.alluserData = response.data[0].wallet_info;
                  
               });
          
@@ -20,6 +23,8 @@ angular.module('calenderCodeCtrl',[])
        $scope.checkUser = function(){
         $http.post('/auth/alluser',{}).then(function (response) {
                  $scope.allUser = response.data;
+                 $scope.alluserData = response.data[0].wallet_info;
+                 
               });
        }
 

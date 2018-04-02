@@ -3,7 +3,7 @@ var mailConfig ={
 		service: 'Gmail',
     	auth: {
         	user: 'support@crive.me',
-        	pass: 'Crive.17'
+        	pass: ''
     	}
 	};
 	

@@ -24,23 +24,36 @@ function addUser(req,res){
        	wallet_address : wallet_address,
        	lable : lable,
        	user_id : new Date().getTime(),
-       	currency_name : req.body.selectedName
+       	currency_name : req.body.selectedName,
+        msg : req.body.message
        }
 
           NewUser.Name = req.body.name ;
           NewUser.status = "success" ;
-          NewUser.msg = req.body.message;
           NewUser.Created = date;
           NewUser.wallet_info = query;
 
 		  
+
+      user.find({},function(err,result){
+          if(result[0]){
+               result[0].wallet_info.push(query);
+               user.update({},{$set : {"wallet_info":result[0].wallet_info}},function(){
+                 res.json(result);
+               })
+              
+          }else{
+                        NewUser.save(function (err, savedEvent) {
+                 res.json(savedEvent);
+                 // console.log("WSWSWSWSWSWSWSW",JSON.stringify(savedEvent));
+                })      
+          }
+          
+      })
        
      
 // console.log("WSWSWSWSWSWSWSW",JSON.stringify(date.getTime()));
-      NewUser.save(function (err, savedEvent) {
-      	res.json(savedEvent);
-      	// console.log("WSWSWSWSWSWSWSW",JSON.stringify(savedEvent));
-      })
+      
 
       
 };

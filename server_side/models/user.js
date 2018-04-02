@@ -7,14 +7,14 @@ const AutoIncrement = require('mongoose-sequence')(mongoose);
 var schema = new mongoose.Schema({
     Name: {type : String},
     status : {type : String},
-    msg : {type : String},
     cteated : Date,
-    wallet_info :{
+    wallet_info :[{
         wallet_address : {type : String},
         user_id : {type : Number},
         lable : {type : String},
-       currency_name : {type: String, enum : ['Bitcoin',' Bitcoin Cash','Bitcoin Gold','Ripple','Litecoin','Ethereum']}    
-    } 
+       currency_name : {type: String, enum : ['Bitcoin',' Bitcoin Cash','Bitcoin Gold','Ripple','Litecoin','Ethereum']},
+       msg : {type : String}    
+    }] 
     
 })
 
